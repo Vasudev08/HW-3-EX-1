@@ -1,3 +1,4 @@
+# Basic Queries
 # Question 1
 SELECT Name FROM Students;
 
@@ -18,5 +19,19 @@ UPDATE Students SET Points = 500 WHERE Name='Basma';
 
 # Question 7
 UPDATE Students SET Points = 100 WHERE Name='Alex';
+
+# Creating Table
+CREATE TABLE graduates(
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT NOT NULL UNIQUE,
+    AGE INTEGER,
+    Gender TEXT,
+    Points INTEGER,
+    Graduation TEXT
+)
+INSERT INTO graduates(Name, Age, Gender, Points) SELECT Name, Age, Gender, Points FROM Students WHERE Students.Name='Layal';
+UPDATE graduates SET Graduation='08-09-2018' WHERE Name='Layal';
+DELETE FROM graduates WHERE Name='Layal';
+
 
 
